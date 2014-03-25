@@ -2,6 +2,9 @@
 #define ENTIDADES_H
 
 #include "automovel.h"
+#include "automovelgol.h"
+#include "automovelka.h"
+#include "automovelpalio.h"
 #include "cilindrada.h"
 #include "motor.h"
 #include "motoraco.h"

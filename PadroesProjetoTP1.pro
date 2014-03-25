@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     Entidades \
     FactoryMethod \
-    Gui
+    Gui \
+    AbstractFactory

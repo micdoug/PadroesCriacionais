@@ -19,6 +19,13 @@ SOURCES += main.cpp
 #include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
 #qtcAddDeployment()
 
+unix:!macx: LIBS += -L$$OUT_PWD/../AbstractFactory/ -lAbstractFactory
+
+INCLUDEPATH += $$PWD/../AbstractFactory
+DEPENDPATH += $$PWD/../AbstractFactory
+
+unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../AbstractFactory/libAbstractFactory.a
+
 unix:!macx: LIBS += -L$$OUT_PWD/../FactoryMethod/ -lFactoryMethod
 
 INCLUDEPATH += $$PWD/../FactoryMethod
