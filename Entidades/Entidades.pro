@@ -11,7 +11,11 @@ SOURCES += \
     motortitanio.cpp \
     motorap.cpp \
     motorcht.cpp \
-    motorfire.cpp
+    motorfire.cpp \
+    pneu.cpp \
+    pneugoodyear.cpp \
+    pneufirestone.cpp \
+    pneumichelin.cpp
 
 HEADERS += \
     motor.h \
@@ -21,4 +25,8 @@ HEADERS += \
     motortitanio.h \
     motorap.h \
     motorcht.h \
-    motorfire.h
+    motorfire.h \
+    pneu.h \
+    pneugoodyear.h \
+    pneufirestone.h \
+    pneumichelin.h

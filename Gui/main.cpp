@@ -6,6 +6,10 @@
 #include "motorcht.h"
 #include "motorap.h"
 #include "metalurgicofrances.h"
+#include "pneugoodyear.h"
+#include "pneufirestone.h"
+#include "pneumichelin.h"
+#include <typeinfo>
 #include <iostream>
 
 using namespace Entidades;
@@ -26,7 +30,9 @@ int main(int argc, char *argv[])
     //void (*function) (Metalurgico *)
     auto function = [] (Metalurgico *metalurgico) -> void {
         Motor *motor =  metalurgico->createMotor(Entidades::ALTA);
-        cout << motor->descricao() << endl << endl;
+        cout << motor->descricao() << endl;
+        cout << typeid(*motor).name() << endl << endl;
+
         delete motor;
         delete metalurgico;
     };
@@ -53,6 +59,10 @@ int main(int argc, char *argv[])
 
     motor = new MotorAP();
     function2(motor);
+
+    Pneu *p = new PneuGoodyear();
+    cout << p->furar() << endl;
+    delete p;
 
     return 0;
 }
