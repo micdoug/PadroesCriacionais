@@ -4,6 +4,9 @@ CONFIG += c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
+QMAKE_CXXFLAGS += -O3 \
+                  -pedantic
+
 SOURCES += \
     motor.cpp \
     motoraluminio.cpp \
@@ -15,7 +18,11 @@ SOURCES += \
     pneu.cpp \
     pneugoodyear.cpp \
     pneufirestone.cpp \
-    pneumichelin.cpp
+    pneumichelin.cpp \
+    automovel.cpp \
+    automovelgol.cpp \
+    automovelka.cpp \
+    automovelpalio.cpp
 
 HEADERS += \
     motor.h \
@@ -29,4 +36,9 @@ HEADERS += \
     pneu.h \
     pneugoodyear.h \
     pneufirestone.h \
-    pneumichelin.h
+    pneumichelin.h \
+    entidades.h \
+    automovel.h \
+    automovelgol.h \
+    automovelka.h \
+    automovelpalio.h

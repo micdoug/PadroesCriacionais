@@ -15,7 +15,8 @@ HEADERS += \
     metalurgico.h \
     metalurgicobrasileiro.h \
     metalurgicoalemao.h \
-    metalurgicofrances.h
+    metalurgicofrances.h \
+    factorymethod.h
 
 
 unix:!macx: LIBS += -L$$OUT_PWD/../Entidades/ -lEntidades

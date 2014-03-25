@@ -9,6 +9,7 @@
 #include "pneugoodyear.h"
 #include "pneufirestone.h"
 #include "pneumichelin.h"
+#include "automovel.h"
 #include <typeinfo>
 #include <iostream>
 
@@ -27,42 +28,22 @@ int main(int argc, char *argv[])
 
 //    return app.exec();
 
-    //void (*function) (Metalurgico *)
-    auto function = [] (Metalurgico *metalurgico) -> void {
-        Motor *motor =  metalurgico->createMotor(Entidades::ALTA);
-        cout << motor->descricao() << endl;
-        cout << typeid(*motor).name() << endl << endl;
+    auto motorFactory = [] (void) -> Motor* { return new MotorAP(); };
+    auto pneuFactory = [] (void) -> Pneu* { return new PneuGoodyear(); };
 
-        delete motor;
-        delete metalurgico;
-    };
+    Pneu *pneus[4];
 
-    auto function2 = [] (Motor *m)  {
-        cout << m->ligar() << endl << endl;
-        delete m;
-    };
+    for(int i=0; i<4; ++i)
+    {
+        pneus[i] = new PneuFirestone();
+    }
 
-    Metalurgico *metalurgico = new MetalurgicoBrasileiro();
-    function(metalurgico);
+    Automovel *automovel = new Automovel(motorFactory, pneuFactory);
 
-    metalurgico = new MetalurgicoAlemao();
-    function(metalurgico);
+    cout << typeid(*(automovel->getPneu(0))).name() << endl;
+    cout << typeid(*(automovel->motor())).name() << endl;
 
-    metalurgico = new MetalurgicoFrances();
-    function(metalurgico);
-
-    Motor *motor = new MotorFire();
-    function2(motor);
-
-    motor = new MotorCHT();
-    function2(motor);
-
-    motor = new MotorAP();
-    function2(motor);
-
-    Pneu *p = new PneuGoodyear();
-    cout << p->furar() << endl;
-    delete p;
+    delete automovel;
 
     return 0;
 }

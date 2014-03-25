@@ -1,10 +1,6 @@
 #ifndef CILINDRADA_H
 #define CILINDRADA_H
 
-/*!
- * Engloba todas as entidades básicas envolvidas no domínio do problema. Estas entidades representam
- * estruturas que armazenam status e se comportam de maneira a representar as entidades do mundo real.
- */
 namespace Entidades
 {
     /*!

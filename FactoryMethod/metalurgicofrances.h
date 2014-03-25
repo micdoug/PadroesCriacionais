@@ -15,7 +15,7 @@ public:
     virtual ~MetalurgicoFrances();
 
     //Métodos específicos reimplementados
-    Entidades::Motor *createMotor(const Entidades::Cilindrada &cilindrada) const;
+    virtual Motor *createMotor(const Cilindrada &cilindrada) const override;
 };
 
 #endif // METALURGICOFRANCES_H
