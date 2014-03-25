@@ -8,11 +8,17 @@ SOURCES += \
     motor.cpp \
     motoraluminio.cpp \
     motoraco.cpp \
-    motortitanio.cpp
+    motortitanio.cpp \
+    motorap.cpp \
+    motorcht.cpp \
+    motorfire.cpp
 
 HEADERS += \
     motor.h \
     cilindrada.h \
     motoraluminio.h \
     motoraco.h \
-    motortitanio.h
+    motortitanio.h \
+    motorap.h \
+    motorcht.h \
+    motorfire.h

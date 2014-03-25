@@ -2,9 +2,26 @@
 
 using namespace Entidades;
 
+/*!
+ * \class Entidades::MotorTitanio
+ * Representa um motor fabricado utilizando como matéria prima principal o titânio.
+ * Este motor tem a opção de ser construído com 5 cilindros em sua versão mais básica
+ * ou com 10 cilindros em sua versão melhorada.
+ */
+
+/*!
+ * Construtor da classe. Deve ser passado como parâmetro o nível de cilindrada que o motor
+ * deverá possuir.
+ * \param cilindrada
+ * Ao passar como parâmetro Entidades::Cilindrada::ALTA o motor será construído com 10 cilindros e
+ * ao passar Entidades::Cilindrada::BAIXA o motor será construído com 5 cilindros.
+ */
 MotorTitanio::MotorTitanio(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
+/*!
+ * Destrutor da classe. Não faz nenhuma operação em especial.
+ */
 MotorTitanio::~MotorTitanio()
 {}
 

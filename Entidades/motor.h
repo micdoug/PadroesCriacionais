@@ -24,6 +24,7 @@ public:
 
     //Métodos específicos
     virtual string descricao() const = 0;
+    virtual string ligar() const;
 
 private:
     //Atributos
