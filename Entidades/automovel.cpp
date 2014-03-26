@@ -92,6 +92,20 @@ Automovel::Automovel(MotorFactory mfunction, PneuFactory function)
 }
 
 /*!
+ * Construtor por cópia.
+ * \param automovel
+ * Objeto a ser copiado.
+ */
+Automovel::Automovel(const Entidades::Automovel &automovel)
+{
+    setMotor(automovel.motor()->clone());
+    for(int i=0; i<4; ++i)
+    {
+        setPneu(automovel.getPneu(i)->clone(), i);
+    }
+}
+
+/*!
  * Destrutor da classe. Libera objetos armazenados na memória.
  */
 Automovel::~Automovel()
@@ -122,7 +136,7 @@ Motor *Automovel::motor() const
  * \return
  * Pneu que compõe o automóvel.
  */
-Pneu *Automovel::getPneu(int indice)
+Pneu *Automovel::getPneu(int indice) const
 {
     return m_pneus[indice];
 }

@@ -52,6 +52,14 @@ AutomovelPalio::AutomovelPalio(MotorFactory mfunction, PneuFactory function) : A
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param automovel
+ * Objeto a ser copiado.
+ */
+AutomovelPalio::AutomovelPalio(const Entidades::AutomovelPalio &automovel): Automovel(automovel)
+{}
+
+/*!
  * Destrutor da classe
  */
 AutomovelPalio::~AutomovelPalio()
@@ -60,4 +68,9 @@ AutomovelPalio::~AutomovelPalio()
 string AutomovelPalio::entrar() const
 {
     return "Galooo!";
+}
+
+Entidades::Automovel *AutomovelPalio::clone() const
+{
+    return new AutomovelPalio(*this);
 }

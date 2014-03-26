@@ -20,6 +20,14 @@ MotorAluminio::MotorAluminio(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorAluminio::MotorAluminio(const Entidades::MotorAluminio &motor) : Motor(motor)
+{}
+
+/*!
  * Destrutor da classe. Não faz nenhuma operação em especial.
  */
 MotorAluminio::~MotorAluminio()
@@ -32,5 +40,10 @@ string MotorAluminio::descricao() const
     desc +=       (this->cilindrada() == Cilindrada::ALTA ? "6 " : "3 ");
     desc +=       "cilindros. ";
     return desc;
+}
+
+Entidades::Motor *MotorAluminio::clone() const
+{
+    return new MotorAluminio(*this);
 }
 

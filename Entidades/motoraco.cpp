@@ -20,6 +20,14 @@ MotorAco::MotorAco(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
 /*!
+ * Construtor por cópia
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorAco::MotorAco(const Entidades::MotorAco &motor) : Motor(motor)
+{}
+
+/*!
  * Destrutor da classe. Não faz nenhuma operação em especial.
  */
 MotorAco::~MotorAco()
@@ -32,4 +40,9 @@ string MotorAco::descricao() const
     desc +=       (this->cilindrada() == Cilindrada::ALTA ? "8 " : "4 ");
     desc +=       "cilindros. ";
     return desc;
+}
+
+Entidades::Motor *MotorAco::clone() const
+{
+    return new MotorAco(*this);
 }

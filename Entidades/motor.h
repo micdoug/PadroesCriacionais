@@ -16,6 +16,7 @@ class Entidades::Motor
 public:
     //Construtores e destrutores
     explicit Motor(const Cilindrada &cilindrada);
+    explicit Motor(const Motor &motor);
     virtual ~Motor();
 
     //Métodos acessadores
@@ -25,6 +26,7 @@ public:
     //Métodos específicos
     virtual string descricao() const = 0;
     virtual string ligar() const;
+    virtual Motor *clone() const = 0;
 
 private:
     //Atributos

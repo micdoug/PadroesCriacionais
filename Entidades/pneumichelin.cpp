@@ -16,6 +16,14 @@ PneuMichelin::PneuMichelin(bool furado): Pneu(furado)
 {}
 
 /*!
+ * Construtor por cópia
+ * \param pneu
+ * Objeto a ser copiado
+ */
+PneuMichelin::PneuMichelin(const PneuMichelin &pneu) : Pneu(pneu)
+{}
+
+/*!
  * Destrutor da classe.
  */
 PneuMichelin::~PneuMichelin()
@@ -29,4 +37,9 @@ string PneuMichelin::furar()
 string PneuMichelin::consertar()
 {
     return Pneu::furar()+"Pneu Michelin consertado!";
+}
+
+Entidades::Pneu *PneuMichelin::clone() const
+{
+    return new PneuMichelin(*this);
 }

@@ -17,6 +17,14 @@ MotorAP::MotorAP(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorAP::MotorAP(const Entidades::MotorAP &motor) : Motor(motor)
+{}
+
+/*!
  * Destrutor da classe. Não faz nenhuma operação especial.
  */
 MotorAP::~MotorAP()
@@ -30,4 +38,9 @@ string MotorAP::descricao() const
 string MotorAP::ligar() const
 {
     return "AP Ligado!";
+}
+
+Entidades::Motor *MotorAP::clone() const
+{
+    return new MotorAP(*this);
 }

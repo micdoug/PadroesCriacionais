@@ -16,6 +16,14 @@ PneuFirestone::PneuFirestone(bool furado): Pneu(furado)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param pneu
+ * Objeto a ser copiado.
+ */
+PneuFirestone::PneuFirestone(const PneuFirestone &pneu) : Pneu(pneu)
+{}
+
+/*!
  * Destrutor da classe.
  */
 PneuFirestone::~PneuFirestone()
@@ -29,4 +37,9 @@ string PneuFirestone::furar()
 string PneuFirestone::consertar()
 {
     return Pneu::consertar()+"Pneu Firestone consertado!";
+}
+
+Entidades::Pneu *PneuFirestone::clone() const
+{
+    return new PneuFirestone(*this);
 }

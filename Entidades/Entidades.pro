@@ -22,7 +22,11 @@ SOURCES += \
     automovel.cpp \
     automovelgol.cpp \
     automovelka.cpp \
-    automovelpalio.cpp
+    automovelpalio.cpp \
+    automovelgolstandard.cpp \
+    automovelgoldual.cpp \
+    motorflex.cpp \
+    automovelgolluxo.cpp
 
 HEADERS += \
     motor.h \
@@ -41,4 +45,8 @@ HEADERS += \
     automovel.h \
     automovelgol.h \
     automovelka.h \
-    automovelpalio.h
+    automovelpalio.h \
+    automovelgolstandard.h \
+    automovelgoldual.h \
+    motorflex.h \
+    automovelgolluxo.h

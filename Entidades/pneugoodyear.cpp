@@ -16,6 +16,14 @@ PneuGoodyear::PneuGoodyear(bool furado) : Pneu(furado)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param pneu
+ * Objeto a ser copiado.
+ */
+PneuGoodyear::PneuGoodyear(const Entidades::PneuGoodyear &pneu) : Pneu(pneu)
+{}
+
+/*!
  * Destrutor da classe.
  */
 PneuGoodyear::~PneuGoodyear()
@@ -29,4 +37,9 @@ string PneuGoodyear::furar()
 string PneuGoodyear::consertar()
 {
     return Pneu::consertar()+"Pneu Goodyear consertado!";
+}
+
+Entidades::Pneu *PneuGoodyear::clone() const
+{
+    return new PneuGoodyear(*this);
 }

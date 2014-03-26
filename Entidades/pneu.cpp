@@ -17,6 +17,14 @@ Pneu::Pneu(bool furado) : m_furado(furado)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param pneu
+ * Objeto a ser copiado.
+ */
+Pneu::Pneu(const Entidades::Pneu &pneu) :  m_furado(pneu.furado())
+{}
+
+/*!
  * Destrutor da classe.
  */
 Pneu::~Pneu()
@@ -68,3 +76,8 @@ void Pneu::setFurado(bool furado)
 {
     m_furado = furado;
 }
+
+/*!
+ * \fn Pneu *Pneu::clone() const
+ * Cria uma instância copiando os atributos desta.
+ */

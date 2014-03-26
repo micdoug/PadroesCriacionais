@@ -17,6 +17,14 @@ Motor::Motor(const Cilindrada &cilindrada): m_cilindrada(cilindrada)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+Motor::Motor(const Entidades::Motor &motor) : m_cilindrada(motor.cilindrada())
+{}
+
+/*!
  * Destrutor da classe.
  */
 Motor::~Motor()
@@ -56,4 +64,11 @@ string Motor::ligar() const
  * \fn virtual string Entidades::Motor::descricao() const = 0
  * Este método devolve uma string com uma breve descrição sobre este motor. A descrição pode conter,
  * por exemplo, o material usado em sua construção e o número de cilindros que o mesmo contém.
+ */
+
+/*!
+ * \fn Motor *Motor::clone() const
+ * Cria um clone desta instância.
+ * \return
+ * Cópia deste objeto.
  */

@@ -52,6 +52,14 @@ AutomovelGol::AutomovelGol(MotorFactory mfunction, PneuFactory function) : Autom
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param gol
+ * Objeto a ser copiado.
+ */
+AutomovelGol::AutomovelGol(const Entidades::AutomovelGol &gol) : Automovel(gol)
+{}
+
+/*!
  * Destrutor da classe.
  */
 AutomovelGol::~AutomovelGol()
@@ -60,4 +68,14 @@ AutomovelGol::~AutomovelGol()
 string AutomovelGol::entrar() const
 {
     return "Brum!";
+}
+
+/*!
+ * Copia o objeto.
+ * \return
+ * Cópia do objeto.
+ */
+Entidades::Automovel *AutomovelGol::clone() const
+{
+    return new AutomovelGol(*this);
 }

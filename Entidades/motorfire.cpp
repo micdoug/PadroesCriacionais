@@ -16,6 +16,17 @@ using namespace Entidades;
 MotorFire::MotorFire(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
+/*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorFire::MotorFire(const Entidades::MotorFire &motor) : Motor(motor)
+{}
+
+/*!
+ * Destrutor da classe.
+ */
 MotorFire::~MotorFire()
 {}
 
@@ -27,4 +38,9 @@ string MotorFire::descricao() const
 string MotorFire::ligar() const
 {
     return "FIRE Ligado!";
+}
+
+Entidades::Motor *MotorFire::clone() const
+{
+    return new MotorFire(*this);
 }

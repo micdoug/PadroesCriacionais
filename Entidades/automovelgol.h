@@ -16,10 +16,12 @@ public:
     explicit AutomovelGol(Motor *motor, PneuFactory function);
     explicit AutomovelGol(MotorFactory mfunction, Pneu *pneus[]);
     explicit AutomovelGol(MotorFactory mfunction, PneuFactory function);
+    explicit AutomovelGol(const AutomovelGol &gol);
     virtual ~AutomovelGol();
 
     //Métodos específicos reimplementados
     virtual string entrar() const override;
+    virtual Automovel *clone() const override;
 };
 
 #endif // AUTOMOVELGOL_H

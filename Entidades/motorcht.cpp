@@ -16,6 +16,17 @@ using namespace Entidades;
 MotorCHT::MotorCHT(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
+/*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorCHT::MotorCHT(const Entidades::MotorCHT &motor) : Motor(motor)
+{}
+
+/*!
+ * Destrutor da classe.
+ */
 MotorCHT::~MotorCHT()
 {}
 
@@ -27,4 +38,9 @@ string MotorCHT::descricao() const
 string MotorCHT::ligar() const
 {
     return "CHT Ligado!";
+}
+
+Entidades::Motor *MotorCHT::clone() const
+{
+    return new MotorCHT(*this);
 }

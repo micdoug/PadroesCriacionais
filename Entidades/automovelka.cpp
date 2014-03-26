@@ -52,6 +52,14 @@ AutomovelKa::AutomovelKa(MotorFactory mfunction, PneuFactory function) : Automov
 {}
 
 /*!
+ * Construtor por cópia
+ * \param automovel
+ * Objeto a ser copiado.
+ */
+AutomovelKa::AutomovelKa(const Entidades::AutomovelKa &automovel) : Automovel(automovel)
+{}
+
+/*!
  * Destrutor da classe
  */
 AutomovelKa::~AutomovelKa()
@@ -60,4 +68,9 @@ AutomovelKa::~AutomovelKa()
 string AutomovelKa::entrar() const
 {
     return "Trem!";
+}
+
+Entidades::Automovel *AutomovelKa::clone() const
+{
+    return new AutomovelKa(*this);
 }

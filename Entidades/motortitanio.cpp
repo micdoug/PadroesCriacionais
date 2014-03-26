@@ -20,6 +20,14 @@ MotorTitanio::MotorTitanio(const Cilindrada &cilindrada): Motor(cilindrada)
 {}
 
 /*!
+ * Construtor por cópia.
+ * \param motor
+ * Objeto a ser copiado.
+ */
+MotorTitanio::MotorTitanio(const Entidades::MotorTitanio &motor) : Motor(motor)
+{}
+
+/*!
  * Destrutor da classe. Não faz nenhuma operação em especial.
  */
 MotorTitanio::~MotorTitanio()
@@ -32,6 +40,11 @@ string MotorTitanio::descricao() const
     desc +=       (this->cilindrada() == Cilindrada::ALTA ? "10 " : "5 ");
     desc +=       "cilindros. ";
     return desc;
+}
+
+Entidades::Motor *MotorTitanio::clone() const
+{
+    return new MotorTitanio(*this);
 }
 
 

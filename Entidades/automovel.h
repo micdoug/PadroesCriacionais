@@ -22,16 +22,18 @@ public:
     explicit Automovel(Motor *motor, PneuFactory function);
     explicit Automovel(MotorFactory mfunction, Pneu *pneus[]);
     explicit Automovel(MotorFactory mfunction, PneuFactory function);
+    explicit Automovel(const Automovel &automovel);
     virtual ~Automovel();
 
     //Métodos acessadores
     Motor *motor() const;
-    Pneu *getPneu(int indice);
+    Pneu *getPneu(int indice) const;
 
     //Métodos específicos abstratos
     virtual string entrar() const = 0;
     virtual string ligar() const;
     virtual string furarPneu(int indice);
+    virtual Automovel *clone() const = 0;
 
 private:
     Motor *m_motor;
