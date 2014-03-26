@@ -10,6 +10,8 @@ using std::string;
 namespace Entidades
 {
     class Automovel;
+    typedef Motor* (*MotorFactory)(void);
+    typedef Pneu* (*PneuFactory) (void);
 }
 
 class Entidades::Automovel
@@ -17,9 +19,9 @@ class Entidades::Automovel
 public:
     //Construtores e destrutores
     explicit Automovel(Motor *motor, Pneu *pneus[]);
-    explicit Automovel(Motor *motor, Pneu* (*function)(void));
-    explicit Automovel(Motor* (*mfunction)(void), Pneu *pneus[]);
-    explicit Automovel(Motor* (*mfunction)(void), Pneu* (*function)(void));
+    explicit Automovel(Motor *motor, PneuFactory function);
+    explicit Automovel(MotorFactory mfunction, Pneu *pneus[]);
+    explicit Automovel(MotorFactory mfunction, PneuFactory function);
     virtual ~Automovel();
 
     //Métodos acessadores

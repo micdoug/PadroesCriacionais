@@ -11,12 +11,14 @@ namespace Entidades
 class Entidades::AutomovelGol : public Entidades::Automovel
 {
 public:
+    //Construtores e destrutores
     explicit AutomovelGol(Motor *motor, Pneu *pneus[]);
-    explicit AutomovelGol(Motor *motor, Pneu* (*function)(void));
-    explicit AutomovelGol(Motor* (*mfunction)(void), Pneu *pneus[]);
-    explicit AutomovelGol(Motor* (*mfunction)(void), Pneu* (*function)(void));
+    explicit AutomovelGol(Motor *motor, PneuFactory function);
+    explicit AutomovelGol(MotorFactory mfunction, Pneu *pneus[]);
+    explicit AutomovelGol(MotorFactory mfunction, PneuFactory function);
     virtual ~AutomovelGol();
 
+    //Métodos específicos reimplementados
     virtual string entrar() const override;
 };
 

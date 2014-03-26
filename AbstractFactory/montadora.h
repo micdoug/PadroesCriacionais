@@ -17,6 +17,7 @@ namespace AbstractFactory
 class AbstractFactory::Montadora
 {
 public:
+    //Construtores e destrutores
     explicit Montadora();
     virtual ~Montadora();
 

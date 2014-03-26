@@ -12,9 +12,9 @@ class Entidades::AutomovelKa : public Entidades::Automovel
 {
 public:
     explicit AutomovelKa(Motor *motor, Pneu *pneus[]);
-    explicit AutomovelKa(Motor *motor, Pneu* (*function)(void));
-    explicit AutomovelKa(Motor* (*mfunction)(void), Pneu *pneus[]);
-    explicit AutomovelKa(Motor* (*mfunction)(void), Pneu* (*function)(void));
+    explicit AutomovelKa(Motor *motor, PneuFactory function);
+    explicit AutomovelKa(MotorFactory mfunction, Pneu *pneus[]);
+    explicit AutomovelKa(MotorFactory mfunction, PneuFactory function);
     virtual ~AutomovelKa();
 
     virtual string entrar() const override;

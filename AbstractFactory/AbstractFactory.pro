@@ -25,4 +25,5 @@ HEADERS += \
     montadora.h \
     montadoravolkswagen.h \
     montadoraford.h \
-    montadorafiat.h
+    montadorafiat.h \
+    abstractfactory.h
