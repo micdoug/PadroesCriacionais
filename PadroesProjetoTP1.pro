@@ -4,6 +4,7 @@ SUBDIRS += \
     Entidades \
     FactoryMethod \
     AbstractFactory \
-    Gui \
-    Prototype
+    Prototype \
+    Gui
+
 
