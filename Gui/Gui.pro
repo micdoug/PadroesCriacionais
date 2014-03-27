@@ -50,3 +50,6 @@ INCLUDEPATH += $$PWD/../Prototype
 DEPENDPATH += $$PWD/../Prototype
 
 unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../Prototype/libPrototype.a
+
+OTHER_FILES += \
+    qtquick2applicationviewer/ChooseColor.qml

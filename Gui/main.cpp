@@ -1,9 +1,11 @@
+#include "qtquick2applicationviewer.h"
+#include <QGuiApplication>
+
 #include <typeinfo>
 #include <iostream>
 #include <cxxabi.h>
 #include "abstractfactory.h"
 #include "automovel.h"
-#include "teste.h"
 #include "automovelgolprototipo.h"
 #include "entidades.h"
 #include "factorymethod.h"
@@ -18,6 +20,11 @@ using namespace FactoryMethod;
 
 int main(int argc, char *argv[])
 {
+    /*QGuiApplication app(argc, argv);
+    QtQuick2ApplicationViewer viewer;
+    viewer.setMainQmlFile("qml/Gui/main.qml");
+    viewer.showExpanded();
+    return app.exec();*/
     Montadora *montadora = new MontadoraVolkswagen();
     Automovel *automovel = montadora->createAutomovel();
 
