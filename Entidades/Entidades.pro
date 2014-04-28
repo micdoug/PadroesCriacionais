@@ -26,7 +26,12 @@ SOURCES += \
     automovelgolstandard.cpp \
     automovelgoldual.cpp \
     motorflex.cpp \
-    automovelgolluxo.cpp
+    automovelgolluxo.cpp \
+    automovelbmw.cpp \
+    pneusilicone.cpp \
+    pneuborrachanatural.cpp \
+    pneuborrachasintetica.cpp \
+    automovelpegeout.cpp
 
 HEADERS += \
     motor.h \
@@ -49,4 +54,9 @@ HEADERS += \
     automovelgolstandard.h \
     automovelgoldual.h \
     motorflex.h \
-    automovelgolluxo.h
+    automovelgolluxo.h \
+    automovelbmw.h \
+    pneusilicone.h \
+    pneuborrachanatural.h \
+    pneuborrachasintetica.h \
+    automovelpegeout.h

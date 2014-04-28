@@ -16,6 +16,8 @@ public:
 
     //Métodos específicos reimplementados
     virtual Motor *createMotor(const Cilindrada &cilindrada) const override;
+    virtual Automovel *createAutomovel(Entidades::Motor *motor, Entidades::Pneu *pneus[]) const override;
+    virtual Pneu *createPneu() const override;
 };
 
 #endif // METALURGICOBRASILEIRO_H

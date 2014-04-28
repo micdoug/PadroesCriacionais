@@ -29,3 +29,22 @@ Metalurgico::~Metalurgico()
  * \return
  * Novo objeto criado.
  */
+
+/*!
+ * \fn virtual Entidades::Automovel *createAutomovel(Motor *motor, Pneu *pneus[]) const = 0
+ * Método abstrato que deve ser reimplementado pelas subclasses instanciando um
+ * objeto concreto que implemente a interface de Entidades::Automovel.
+ * \param motor
+ * Motor a ser usado na construção do automóvel.
+ * \param pneus
+ * Conjunto de pneus a serem utilizados na construção do automovel.
+ * \return
+ * Novo objeto criado.
+ */
+
+/*! \fn virtual Entidades::Pneu *createPneu() const = 0
+ * Método abstrato que deve ser reimplementado pelas subclasses instanciando um
+ * objeto concreto que implemente a interface de Entidades::Pneu.
+ * \return
+ * Novo objeto criado.
+ */

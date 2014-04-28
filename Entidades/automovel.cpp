@@ -141,6 +141,11 @@ Pneu *Automovel::getPneu(int indice) const
     return m_pneus[indice];
 }
 
+std::string Automovel::entrar() const
+{
+    return "";
+}
+
 /*!
  * Liga o automóvel. Simula o acionamento do motor do automóvel.
  * \return

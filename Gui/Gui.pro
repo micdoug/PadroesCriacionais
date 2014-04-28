@@ -53,3 +53,10 @@ unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../Prototype/libPrototype.a
 
 OTHER_FILES += \
     qtquick2applicationviewer/ChooseColor.qml
+
+unix:!macx: LIBS += -L$$OUT_PWD/../Builder/ -lBuilder
+
+INCLUDEPATH += $$PWD/../Builder
+DEPENDPATH += $$PWD/../Builder
+
+unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../Builder/libBuilder.a

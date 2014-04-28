@@ -1,8 +1,10 @@
 #include "metalurgicofrances.h"
 #include "motortitanio.h"
+#include "automovelpegeout.h"
+#include "pneuborrachasintetica.h"
 
 using namespace FactoryMethod;
-using Entidades::MotorTitanio;
+using namespace Entidades;
 
 /*!
  * \class FactoryMethod::MetalurgicoFrances
@@ -32,4 +34,28 @@ MetalurgicoFrances::~MetalurgicoFrances()
 Motor *MetalurgicoFrances::createMotor(const Entidades::Cilindrada &cilindrada) const
 {
     return new MotorTitanio(cilindrada);
+}
+
+/*!
+ * Método reimplementado que instancia um objeto da classe Entidades::AutomovelPegeout.
+ * \param motor
+ * Motor a ser utilizado na construção do automóvel.
+ * \param pneus
+ * Conjunto de pneus a serem utilizados na construção do automóvel.
+ * \return
+ * Novo objeto criado.
+ */
+Automovel *MetalurgicoFrances::createAutomovel(Motor *motor, Pneu *pneus[]) const
+{
+    return new AutomovelPegeout(motor, pneus);
+}
+
+/*!
+ * Método reimplementado que instancia um objeto da classe Entidades::PneuBorrachaSintetica.
+ * \return
+ * Novo objeto criado.
+ */
+Pneu *MetalurgicoFrances::createPneu() const
+{
+    return new PneuBorrachaSintetica();
 }

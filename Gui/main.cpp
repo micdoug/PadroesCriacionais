@@ -9,6 +9,7 @@
 #include "automovelgolprototipo.h"
 #include "entidades.h"
 #include "factorymethod.h"
+#include "builder.h"
 
 using std::cout;
 using std::endl;
@@ -17,6 +18,7 @@ using namespace AbstractFactory;
 using namespace Entidades;
 using namespace Prototype;
 using namespace FactoryMethod;
+using namespace Builder;
 
 int main(int argc, char *argv[])
 {
@@ -52,6 +54,17 @@ int main(int argc, char *argv[])
 
     delete metalurgico;
     delete motor;
+
+    Fabrica *fabrica = new Fabrica(new MetalurgicoFrances());
+    automovel = fabrica->createAutomovel();
+
+    cout << __cxa_demangle(typeid(*fabrica).name(), nullptr, nullptr, nullptr) << endl;
+    cout << __cxa_demangle(typeid(*automovel).name(), nullptr, nullptr, nullptr) << endl;
+    cout << __cxa_demangle(typeid(*automovel->motor()).name(), nullptr, nullptr, nullptr) << endl;
+    cout << __cxa_demangle(typeid(*automovel->getPneu(1)).name(), nullptr, nullptr, nullptr) << endl;
+
+    delete fabrica;
+    delete automovel;
 
     return 0;
 }

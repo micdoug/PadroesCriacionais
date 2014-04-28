@@ -1,7 +1,9 @@
 #include "metalurgicobrasileiro.h"
 #include "motoraco.h"
+#include "automovelgol.h"
+#include "pneuborrachanatural.h"
 
-using Entidades::MotorAco;
+using namespace Entidades;
 
 /*!
  * \class FactoryMethod::MetalurgicoBrasileiro
@@ -32,3 +34,29 @@ Motor *FactoryMethod::MetalurgicoBrasileiro::createMotor(const Cilindrada &cilin
 {
     return new MotorAco(cilindrada);
 }
+
+/*!
+ * Método reimplementado que instancia um objeto da classe Entidades::AutomovelGol.
+ * \param motor
+ * Motor a ser utilizado na construção do automóvel.
+ * \param pneus
+ * Conjunto de pneus a serem utilizados na construção do automóvel.
+ * \return
+ * Novo objeto criado.
+ */
+Automovel *FactoryMethod::MetalurgicoBrasileiro::createAutomovel(Entidades::Motor *motor, Entidades::Pneu *pneus[]) const
+{
+    return new AutomovelGol(motor, pneus);
+}
+
+/*!
+ * Método reimplementado que instancia um objeto da classe Entidades::PneuBorrachaNatural.
+ * \return
+ * Novo objeto criado.
+ */
+Pneu *FactoryMethod::MetalurgicoBrasileiro::createPneu() const
+{
+    return new PneuBorrachaNatural();
+}
+
+

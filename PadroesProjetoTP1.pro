@@ -5,6 +5,8 @@ SUBDIRS += \
     FactoryMethod \
     AbstractFactory \
     Prototype \
+    Builder \
     Gui
+
 
 
